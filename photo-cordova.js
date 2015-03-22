@@ -13,13 +13,13 @@ MeteorCamera.getPicture = function (options, callback) {
     callback(new Meteor.Error("cordovaError", error));
   };
 
-  navigator.camera.getPicture(success, failure, 
+  navigator.camera.getPicture(success, failure,
     _.extend(options, {
       quality: options.quality || 49,
       targetWidth: options.width || 640,
       targetHeight: options.height || 480,
-      destinationType: Camera.DestinationType.DATA_URL,
-        correctOrientation : options.correctOrientation
+      destinationType: 0,
+      correctOrientation : options.correctOrientation
     })
   );
 };
